@@ -1,8 +1,156 @@
-.attribution {
-    font-size: 11px;
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --Blue: #3d52a3;
+    --Orange: #fa7312;
+    --White: #ffffff;
+    --Light-Grey: #959eac;
+    --Medium-Grey: #7d8899;
+    --Dark-Blue: #252d37;
+    --Dark-Blue2: #252d376a;
+    --Grey: #2e3844a1;
+    --Very-Dark-Blue: #121417;
+    --font-overpass: 'Overpass';    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-Dark-Blue);
+    font-family: var(--font-overpass);
+}
+
+.container {
+    background-image: linear-gradient(to bottom, var(--Dark-Blue), var(--Dark-Blue2));
+    margin: 1.5em;
+    border-radius: 20px;
+    max-width: 328px;
+}
+
+.beforesubmit {
+    height: 350px;
+    padding: 2em 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.beforesubmit > img {
+    width: 40px;
+    padding: 13px;
+    margin-bottom: .6em;
+    background-color: #38445496;
+    border-radius: 50%;
+    
+}
+
+.beforesubmit .title,
+.aftersubmit .title {
+    color: var(--White);
+}
+
+.beforesubmit .text,
+.aftersubmit .text {
+    color: var(--Medium-Grey);
+    font-weight: 600;
+    font-size: .85em;
+    line-height: 20px;
+}
+
+.rating {
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-around;
+    color: var(--Light-Grey);
+    gap: 10px;
+}
+
+.number {
+    font-size: .8em;
+    font-weight: 700;
+    background-color: var(--Grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.rate {
+    display: none;
+}
+
+.number:hover {
+    background-color: var(--Orange);
+    color: var(--White);
+    cursor: pointer;
+}
+
+.submitbutton {
+    padding: 1em;
+    text-transform: uppercase;
+    background-color: var(--Orange);
+    color: var(--White);
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.submitbutton:hover {
+    background-color: var(--White);
+    color: var(--Orange);
+    cursor: pointer;
+}
+
+.aftersubmit {
+    height: 350px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: var(--White);
+    padding: 2em 1.5em;
+}
+
+.aftersubmit img {
+    width: 150px;
+}
+
+.aftersubmit h3 {
+    background-color: var(--Grey);
+    color: var(--Orange);
+    font-size: .9em;
+    font-weight: 400;
+    padding: .9em 1em;
+    margin: .7em auto;
+    border-radius: 50px;
+}
+
+.aftersubmit .text {
     text-align: center;
 }
 
+.attribution {
+    color: var(--White);
+    font-size: .7em;
+}
+
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+    color: var(--Orange);
+}
+
+.attribution a:hover {
+    text-decoration: underline;
 }
