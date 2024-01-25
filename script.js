@@ -1,130 +1,38 @@
-let score01 = document.getElementById('score01')
+const formEl = document.querySelector(".form");
 
-let score02 = document.getElementById('score02')
+formEl.addEventListener("submit", function (e) {
+    // prevent the page reload
+    e.preventDefault();
 
-let score03 = document.getElementById('score03')
+    // get rating value
+    const selectedRating = formEl.rating.value;
 
-let score04 = document.getElementById('score04')
+    // guard clause
+    if (!selectedRating) return;
 
-let score05 = document.getElementById('score05')
+    // clear formEl innerHTML
+    formEl.innerHTML = "";
 
-let beforesubmit = document.querySelector('section.beforesubmit')
-let aftersubmit = document.querySelector('section.aftersubmit')
-let realscore = document.getElementById('realscore')
+    const stateEl = `
+  <article class="state">
+        <img
+          src="images/illustration-thank-you.svg"
+          class="state__image"
+          alt="state thank you image"
+          title="thank you"
+          role="presentation"
+        />
+        <p class="state__message">You selected ${selectedRating} out of 5</p>
+        <section class="state__description flex-group">
+          <h1 class="state__title">Thank you!</h1>
+          <p class="state__text">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don’t hesitate to get in touch!
+          </p>
+        </section>
+      </article>
+  `;
 
-
-function clicker1() {
-    score01.style.color = 'white'
-    score01.style.background = '#7d8899'
-
-    score02.style.background = ''
-    score02.style.color = ''
-
-    score03.style.background = ''
-    score03.style.color = ''
-
-    score04.style.background = ''
-    score04.style.color = ''
-
-    score05.style.background = ''
-    score05.style.color = ''
-}
-
-function clicker2() {
-    score01.style.background = ''
-    score01.style.color = ''
-
-    score02.style.background = '#7d8899'
-    score02.style.color = 'white'
-
-    score03.style.background = ''
-    score03.style.color = ''
-
-    score04.style.background = ''
-    score04.style.color = ''
-
-    score05.style.background = ''
-    score05.style.color = ''
-}
-
-function clicker3() {
-    score01.style.background = ''
-    score01.style.color = ''
-
-    score02.style.background = ''
-    score02.style.color = ''
-
-    score03.style.background = '#7d8899'
-    score03.style.color = 'white'
-
-    score04.style.background = ''
-    score04.style.color = ''
-
-    score05.style.background = ''
-    score05.style.color = ''
-}
-
-function clicker4() {
-    score01.style.background = ''
-    score01.style.color = ''
-
-    score02.style.background = ''
-    score02.style.color = ''
-
-    score03.style.background = ''
-    score03.style.color = ''
-
-    score04.style.background = '#7d8899'
-    score04.style.color = 'white'
-
-    score05.style.background = ''
-    score05.style.color = ''
-}
-
-function clicker5() {
-    score01.style.background = ''
-    score01.style.color = ''
-
-    score02.style.background = ''
-    score02.style.color = ''
-
-    score03.style.background = ''
-    score03.style.color = ''
-
-    score04.style.background = ''
-    score04.style.color = ''
-
-    score05.style.background = '#7d8899'
-    score05.style.color = 'white'
-}
-
-function clicker6() {
-    let inputscores = document.getElementsByName('number')
-    let score = ''
-    if (inputscores[0].checked) {
-        score = 1
-        beforesubmit.style.display = 'none'
-        aftersubmit.style.display = 'flex'
-        realscore.innerHTML = '1'
-    } else if (inputscores[1].checked) {
-        score = 2
-        beforesubmit.style.display = 'none'
-        aftersubmit.style.display = 'flex'
-        realscore.innerHTML = '2'
-    } else if (inputscores[2].checked) {
-        score = 3
-        beforesubmit.style.display = 'none'
-        aftersubmit.style.display = 'flex'
-        realscore.innerHTML = '3'
-    } else if (inputscores[3].checked) {
-        score = 4
-        beforesubmit.style.display = 'none'
-        aftersubmit.style.display = 'flex'
-        realscore.innerHTML = '4'
-    } else if (inputscores[4].checked) {
-        score = 5
-        beforesubmit.style.display = 'none'
-        aftersubmit.style.display = 'flex'
-        realscore.innerHTML = '5'
-    }
-}
+    // add stateEl into main
+    formEl.parentElement.innerHTML = stateEl;
+});

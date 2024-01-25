@@ -2,60 +2,49 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="/style.css">
-  <script src="/script.js"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="/interactive-rating-component/assets/images/favicon-32x32.png" />
   <title>Frontend Mentor | Interactive rating component</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-  <main class="container">
 
-    <section class="beforesubmit">
-      <img src="/images/icon-star.svg" alt="star">
+  <main>
 
-      <h1 class="title">How did we do?</h1>
-      <p class="text">Please let us know how we did with your support request. All feedback is appreciated
-        to help us improve our offering!</p>
+    <form action="" class="form">
 
-      <div class="rating">
-        <!-- label == number pop up 1-5-->
-        <label for="score1" class="number" id="score01">1</label>
-        <!-- input == clicky function -->
-        <input type="radio" name="number" id="score1" class="rate" onclick="clicker1()">
-        <!-- radio button== user only select one at a time --> <!--input id==label for -->
+      <img src="images/icon-star.svg" class="form__icon" alt="form star icon" title="star" role="img" />
 
-        <!-- radio button shares same name; only one button can be selected -->
-        <label for="score2" class="number" id="score02">2</label>
-        <input type="radio" name="number" id="score2" class="rate" onclick="clicker2()">
+      <fieldset class="form__content">
 
-        <label for="score3" class="number" id="score03">3</label>
-        <input type="radio" name="number" id="score3" class="rate" onclick="clicker3()">
+        <header class="flex-group">
+          <legend class="form__title">How did we do?</legend>
+          <p class="form__text">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+        </header>
 
-        <label for="score4" class="number" id="score04">4</label>
-        <input type="radio" name="number" id="score4" class="rate" onclick="clicker4()">
+        <div class="ratings">
+          <input type="radio" name="rating" value="1" class="rating" />
+          <input type="radio" name="rating" value="2" class="rating" />
+          <input type="radio" name="rating" value="3" class="rating" />
+          <input type="radio" name="rating" value="4" class="rating" />
+          <input type="radio" name="rating" value="5" class="rating" />
+        </div>
+      </fieldset>
 
-        <label for="score5" class="number" id="score05">5</label>
-        <input type="radio" name="number" id="score5" class="rate" onclick="clicker5()">
-      </div>
-      <input type="submit" value="Submit" class="submitbutton" onclick="clicker6()">
-    </section>
-
-    <section class="aftersubmit">
-      <img src="images/illustration-thank-you.svg" alt="Thank you illustration">
-      <h3>You selected <span id="realscore">0</span> out of 5</h3>
-
-      <h1 class="title">Thank you!</h1>
-      <p class="text">
-        We appreciate you taking the time to give a rating. If you ever need more support,
-        don't hesitate to get in touch!
-      </p>
-    </section>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
   </main>
 
   <footer class="attribution">
@@ -64,4 +53,5 @@
   </footer>
 
 </body>
+
 </html>
